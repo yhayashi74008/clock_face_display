@@ -1,0 +1,14 @@
+[project]
+name = "clock-face-display"
+version = "0.1.0"
+description = "Renders a digital clock face string from an epoch timestamp and optional timezone offset, using box-drawing characters for fixed-width output."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
