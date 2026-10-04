@@ -1,6 +1,6 @@
 [project]
 name = "clock-face-display"
-version = "0.1.0"
+version = "0.1.1"
 description = "Renders a digital clock face string from an epoch timestamp and optional timezone offset, using box-drawing characters for fixed-width output."
 requires-python = ">=3.10"
 dependencies = []
