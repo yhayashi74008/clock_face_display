@@ -20,3 +20,10 @@ Terminal widgets and log headers that show a time often use `strftime` and get v
 ## Edge cases
 
 The timezone offset is given in **minutes**, not hours, so half-hour zones like India (+330) work without floating point. Negative epoch timestamps are rejected and raise `ValueError`; the library is intended for live clocks, not historical dates before 1970. `NaN` and `inf` are also rejected. Seconds are not displayed — the face shows `HH:MM` only, because a display that updates every second is noisy in a terminal.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
